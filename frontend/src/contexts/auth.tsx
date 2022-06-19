@@ -7,7 +7,8 @@ export default function AuthProvider({ children }: any){
     const [mensagem, setMensagem] = useState({
         err: false,
         msg: ''
-      });
+    });
+    
     async function Login(email: any, senha: any){
         const dados = {
             email: email,
@@ -16,7 +17,9 @@ export default function AuthProvider({ children }: any){
         try {
             const {data} = await axios.post('http://localhost:8000/user/login', dados);
             setUser(data.token);
-            return 'OK'
+            localStorage.setItem('AuthToken', data.token);
+            localStorage.setItem('User', email);
+            return 'OK';
 
         } catch (error: any) {
             const msg = error.response.data.err;
@@ -29,7 +32,7 @@ export default function AuthProvider({ children }: any){
     }
     return(
         <>
-            <AuthContext.Provider value={{Login, mensagem, user}}>
+            <AuthContext.Provider value={{Login, mensagem, user, setUser}}>
                 {children}
             </AuthContext.Provider> 
         </>
