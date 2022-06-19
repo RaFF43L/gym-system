@@ -1,0 +1,22 @@
+{
+  "name": "academia-api",
+  "version": "1.0.0",
+  "description": "API de academia",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon index.js"
+  },
+  "author": "Raffael Pimentel Ribeiro <ribeiro_pimentel@discente.ufg.br>",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.18.1",
+    "mysql2": "^2.3.3",
+    "nodemon": "^2.0.16",
+    "pg": "^8.7.3",
+    "pg-hstore": "^2.3.4",
+    "sequelize": "^6.21.0",
+    "sqlite3": "^5.0.8"
+  }
+}

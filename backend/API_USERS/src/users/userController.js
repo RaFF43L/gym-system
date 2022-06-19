@@ -35,7 +35,7 @@ router.post('/users/create', (req, res)=>{
         }
     }).catch((err)=>{
         res.status(400);
-        res.json(err);
+        res.json({err: 'Falha interna'});
     })
   
 });

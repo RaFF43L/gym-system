@@ -55,6 +55,12 @@ const handleCloseNavBar = (page: any) => {
         localStorage.removeItem('AuthToken');
         localStorage.removeItem('User');
     }
+    if(page === 'Dashboard'){
+      navigate('/dashboard');
+    }
+    if(page === 'Cadastro'){
+      navigate('/cadastro/students');
+    }
 };
     return(
         <AppBar position="static" color="secondary">
@@ -131,7 +137,7 @@ const handleCloseNavBar = (page: any) => {
                 {pages.map((page) => (
                   <Button
                     key={page}
-                    onClick={handleCloseNavMenu}
+                    onClick={() => handleCloseNavBar(page)}
                     sx={{ my: 2, color: 'white', display: 'block' }}
                   >
                     {page}

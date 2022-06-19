@@ -3,6 +3,7 @@ import {Route, Routes} from 'react-router-dom';
 import { AuthContext } from '../contexts/auth';
 import Login from '../pages/Login';
 import Cadastro from '../pages/Cadastro';
+import CadastroStudent from '../pages/CadastroUsuario'
 import Dashboard from '../pages/Dashboard';
 import PrivateRoutes from './PrivateRoutes';
 export const AppRoutes = () =>{
@@ -15,7 +16,9 @@ export const AppRoutes = () =>{
                 <PrivateRoutes user={user} redirectPath={'/'}>
                     <Dashboard/>
                 </PrivateRoutes>
-            }></Route>
+            }>
+            </Route>
+            <Route path='/cadastro/students' element={<CadastroStudent/>}></Route>
         </Routes>
     )
 }

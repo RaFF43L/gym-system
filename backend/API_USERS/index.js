@@ -1,8 +1,8 @@
 const express = require('express');
 const app = express();
-const connection = require("./database/database");
-const User = require('./users/user');
-const userController = require('./users/userController');
+const connection = require("./src/database/database");
+const User = require('./src/users/user');
+const userController = require('./src/users/userController');
 
 const cors = require("cors");
 
