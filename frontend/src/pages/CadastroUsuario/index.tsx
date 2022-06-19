@@ -94,7 +94,6 @@ export default function CadastroAluno() {
               label="Digite seu E-mail"
               name="email"
               autoComplete="email"
-              autoFocus
               onChange={(event) => setEmail(event.target.value)}
             />
             <TextField
